@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
           "Verify with us on our page",
           style: GoogleFonts.poppins(fontSize: 14, color: Colors.black),
         ),
-        Image.asset("Assets/Icons/Login.jpg"),
+        Image.asset("Assets/Icons/Login.jpg",),
         ElevatedButton(
           onPressed: () {
             Navigator.of(context)
