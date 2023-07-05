@@ -14,7 +14,7 @@ void main() {
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
-   final int  password = 123;
+   final int  password = 12345678;
   final  String username = "admin@a";
 
   static var  uname = TextEditingController();
@@ -31,7 +31,7 @@ class LoginPage extends StatelessWidget {
           style: GoogleFonts.poppins(
             fontSize: 45, color: Colors.black
           ),),
-          Text("Login in with your creditanials",
+          Text("Login in with your details",
           style: GoogleFonts.poppins(
             fontSize: 15,color: Colors.black
           ),),
@@ -58,20 +58,22 @@ class LoginPage extends StatelessWidget {
                             30) //to change outline of textarea box
                         ),
                     hintText: "Password",
-                    helperText: "Password must contain atleast 6 letters",
+                    helperText: "Password must contain at least 6 letters",
                     labelText: "Password",
                     prefixIcon: const Icon(Icons.visibility_off_sharp),
                     suffixIcon: const Icon(Icons.visibility)),
               )),
           ElevatedButton(onPressed: () {
             if(uname.text != "" && pass.text != ""){
-            if( uname.text != username || pass.text != password ){
+            // ignore: unrelated_type_equality_checks
+            if( uname.text == username && pass.text == password ){
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const RegisterationPage()));
+
+            }else{
               ScaffoldMessenger.of(context).showSnackBar(const SnackBar
                 (content: Text("Username or password is incorrect"),
                 backgroundColor: Colors.red,));
-            }else{
-            Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => HomePage()));
           }}
             else{
               ScaffoldMessenger.of(context).showSnackBar(const SnackBar
