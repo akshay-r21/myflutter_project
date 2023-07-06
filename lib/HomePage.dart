@@ -1,3 +1,5 @@
+import 'dart:js_util';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -36,6 +38,13 @@ class HomePage extends StatelessWidget {
               ),
               title: Text("Orange"),
               subtitle: Text("\$200"),
+           trailing:  Row (mainAxisSize: MainAxisSize.min,
+             children: [
+               Icon(Icons.favorite),
+               SizedBox(width: 20,),
+               Icon(Icons.shopping_cart)
+             ],
+           ),
            //   trailing: IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart)),
             ),),
           const Card(
@@ -44,7 +53,13 @@ class HomePage extends StatelessWidget {
                     backgroundImage: AssetImage("Assets/Icons/pineapple.png")),
                 title: Text("Pineapple"),
                 subtitle: Text("\$200"),
-                trailing: Icon(Icons.shopping_cart),
+                trailing: Row (mainAxisSize: MainAxisSize.min,
+                  children: [
+                  Icon(Icons.favorite,color: Colors.red,),
+                  SizedBox(width: 20,),
+                  Icon(Icons.shopping_cart)
+                ],
+                  )
               )),
           const Card(
               color: Colors.redAccent,
@@ -53,7 +68,13 @@ class HomePage extends StatelessWidget {
                     backgroundImage: AssetImage("Assets/Icons/mango.png")),
                 title: Text("Pineapple"),
                 subtitle: Text("\$200"),
-                trailing: Icon(Icons.shopping_cart),
+                trailing:  Row (mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.favorite,color: Colors.red,),
+                    SizedBox(width: 20,),
+                    Icon(Icons.shopping_cart)
+                  ],
+                )
               )),
           const Card(
               child: ListTile(
@@ -61,9 +82,15 @@ class HomePage extends StatelessWidget {
                       backgroundImage: AssetImage("Assets/Icons/grapes.png")),
                   title: Text("Grapes"),
                   subtitle: Text("\$200"),
-                  trailing: Icon(Icons.shopping_cart))),
-        ],
-      ),
+                  trailing:  Row (mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.favorite),
+                      SizedBox(width: 20,),
+                      Icon(Icons.shopping_cart)
+                    ],
+                  ))
+          ),
+        ],),
     );
   }
 }

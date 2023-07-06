@@ -24,9 +24,10 @@ class Contact extends StatelessWidget {
             Card(
                 child: ListTile(
               leading: CircleAvatar(
-                backgroundImage: AssetImage("Assets/Icons/per.png"),
+                backgroundImage: AssetImage("Assets/Icons/Contact.png"),
               ),
               title: Text("John"),
+              subtitle: Text("7832782321"),
               trailing: Icon(Icons.call),
             )),
             Card(
@@ -35,6 +36,7 @@ class Contact extends StatelessWidget {
                       backgroundImage: AssetImage("Assets/Icons/person.png"),
                     ),
                     title: Text("Alex"),
+                    subtitle: Text("9797977479"),
                     trailing: Icon(Icons.call))),
             Card(
                 child: ListTile(
@@ -42,13 +44,15 @@ class Contact extends StatelessWidget {
                       backgroundImage: AssetImage("Assets/Icons/person2.png"),
                     ),
                     title: Text("Ann"),
+                    subtitle: Text("8873878887"),
                     trailing: Icon(Icons.call))),
             Card(
                 child: ListTile(
                     leading: CircleAvatar(
-                      backgroundImage: AssetImage("Assets/Icons/per.png"),
+                      backgroundImage: AssetImage("Assets/Icons/Contact.png"),
                     ),
                     title: Text("Derik"),
+                    subtitle: Text("900384939"),
                     trailing: Icon(Icons.call))),
             Card(
                 child: ListTile(
@@ -56,13 +60,15 @@ class Contact extends StatelessWidget {
                       backgroundImage: AssetImage("Assets/Icons/person.png"),
                     ),
                     title: Text("John"),
+                    subtitle: Text("7982739873"),
                     trailing: Icon(Icons.call))),
             Card(
                 child: ListTile(
                     leading: CircleAvatar(
-                      backgroundImage: AssetImage("Assets/Icons/orange.png"),
+                      backgroundImage: AssetImage("Assets/Icons/Contact2.png"),
                     ),
                     title: Text("Sima"),
+                    subtitle: Text("6576376387"),
                     trailing: Icon(Icons.call))),
             Card(
                 child: ListTile(
@@ -73,6 +79,10 @@ class Contact extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.red,
                         )),
+                    subtitle: Text("7672876817",
+                        style: TextStyle(
+                          color: Colors.red,
+                        )),
                     trailing: Icon(Icons.call))),
             Card(
                 child: ListTile(
@@ -80,6 +90,7 @@ class Contact extends StatelessWidget {
                       backgroundImage: AssetImage("Assets/Icons/person.png"),
                     ),
                     title: Text("Siva"),
+                    subtitle: Text("56776765"),
                     trailing: Icon(Icons.call))),
             Card(
                 child: ListTile(
@@ -87,6 +98,7 @@ class Contact extends StatelessWidget {
                       backgroundImage: AssetImage("Assets/Icons/person2.png"),
                     ),
                     title: Text("Alex"),
+                    subtitle: Text("637536557"),
                     trailing: Icon(Icons.call))),
             Card(
                 child: ListTile(
@@ -94,6 +106,7 @@ class Contact extends StatelessWidget {
                       backgroundImage: AssetImage("Assets/Icons/Contact2.png"),
                     ),
                     title: Text("Maria"),
+                    subtitle: Text("326788778"),
                     trailing: Icon(Icons.call))),
             Card(
                 child: ListTile(
@@ -101,14 +114,15 @@ class Contact extends StatelessWidget {
                       backgroundImage: AssetImage("Assets/Icons/Contact.png"),
                     ),
                     title: Text("Maichel"),
-                    trailing: Icon(Icons.call)
-                )),
+                    subtitle: Text("7832782321"),
+                    trailing: Icon(Icons.call))),
             Card(
                 child: ListTile(
                     leading: CircleAvatar(
-                      backgroundImage: AssetImage("Assets/Icons/per.png"),
+                      backgroundImage: AssetImage("Assets/Icons/person.png"),
                     ),
                     title: Text("Meera"),
+                    subtitle: Text("8285822263"),
                     trailing: Icon(Icons.call))),
             Card(
                 child: ListTile(
@@ -116,7 +130,10 @@ class Contact extends StatelessWidget {
                       backgroundImage: AssetImage("Assets/Icons/person2.png"),
                     ),
                     title: Text("Midhun"),
+                    subtitle: Text("7657272687"),
                     trailing: Icon(Icons.call))),
+            Divider(color: Colors.redAccent,thickness: 23.0,)
+
           ],
         ));
   }

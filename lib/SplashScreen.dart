@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myflutter_project/LoginPage.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -8,10 +11,21 @@ void main() {
   ));
 }
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  void initState(){
+    Timer(Duration(seconds: 4), () {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> LoginPage()));
+    });
+  }
+  @override
+
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
