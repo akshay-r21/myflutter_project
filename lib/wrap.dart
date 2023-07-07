@@ -14,10 +14,21 @@ class wrap extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("my home",),backgroundColor: Colors.green,
-      actions: const [
+      actions:  [
         Icon(Icons.camera_alt),
-        SizedBox(width: 30,),
+        SizedBox(width: 10,),
         Icon(Icons.search),
+        SizedBox(width: 10,),
+        PopupMenuButton(itemBuilder: (context){
+          return [
+            PopupMenuItem(child: Text("Settings")),
+            PopupMenuItem(child: Text("New Group")),
+            PopupMenuItem(child: Text("Pzyments")),
+            PopupMenuItem(child: Text("NewBroadcast")),
+            PopupMenuItem(child: Text("Settings")),
+
+          ];
+        })
       ],),
       body: Card(
         child: ListTile(
@@ -25,7 +36,6 @@ class wrap extends StatelessWidget{
               backgroundImage: AssetImage("Assets/Icons/mango.png")),
             title: Text("Pineapple"),
           subtitle: const Row(
-            mai
           ),
         ),
       ),
