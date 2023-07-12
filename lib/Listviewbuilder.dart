@@ -16,7 +16,7 @@ class Listview1 extends StatelessWidget{
           itemCount :10,
           itemBuilder: (context,index){// when content is unkonwn this else that
         return Card(
-         child: ListTile(
+         child:   ListTile(
            leading: Image.asset("Assets/Icons/person2.png"),
            title: Text("dfdg"),//can use list for having different name
            subtitle: Text("hello"),
@@ -24,6 +24,7 @@ class Listview1 extends StatelessWidget{
          ),
         );
       }),
+      floatingActionButton: FloatingActionButton(onPressed: (){},child: Icon(Icons.message),),
     );
   }
 

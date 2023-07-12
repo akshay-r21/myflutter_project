@@ -45,7 +45,7 @@ class ListView2 extends StatelessWidget {
                     child: ListTile(
                       leading: CircleAvatar(
                           backgroundImage: AssetImage(images[index])),
-                      title: Text(names[index]),
+                       title: Text(names[index]),
                       subtitle: Text("hi "),
                       trailing: Text("11:02"),
                     ),

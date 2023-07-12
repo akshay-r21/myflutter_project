@@ -15,12 +15,12 @@ class Whatsapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      /*appBar: AppBar(
         title: const Text(
           "Whatsapp",
         ),
         backgroundColor: Color(0xff0128C7E),
-        actions: const [
+        actions:  [
           Icon(Icons.photo_camera_outlined),
           SizedBox(
             width: 10,
@@ -29,13 +29,21 @@ class Whatsapp extends StatelessWidget {
           SizedBox(
             width: 10,
           ),
-          Icon(Icons.more_vert_sharp)
-        ],
-      ),
+PopupMenuButton(itemBuilder: (context){
+  return[
+    PopupMenuItem(child: Text("New group")),
+    PopupMenuItem(child: Text("New Broadcast")),
+    PopupMenuItem(child: Text("Linked Devices")),
+    PopupMenuItem(child: Text("Starred Messages")),
+    PopupMenuItem(child: Text("Payments")),
+    PopupMenuItem(child: Text("Settings")),
+
+  ];
+})        ],
+      ),*/
       body: ListView(children: const [
         ListTile(
           tileColor: Color(0xff075E54),
-          textColor: Colors.black,
           leading: CircleAvatar(
               backgroundImage: AssetImage("Assets/Icons/person.png")),
           title: Text("Alen"),
@@ -243,6 +251,8 @@ crossAxisAlignment: CrossAxisAlignment.end,
           ),
         ),
       ]),
+      floatingActionButton: FloatingActionButton(onPressed: (){},child: Icon(Icons.message),),
+
     );
   }
 }
