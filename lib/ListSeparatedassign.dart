@@ -11,18 +11,15 @@ void main() {
 class Listviewseperatd extends StatelessWidget {
   var Months = [
     "January",
-    "Advertisement",
     "feb",
     "march",
     "april",
     "may",
-    "Advertisement",
     "june",
     ",july",
     "august",
     "september",
     "october",
-    "Advertisement",
     "november",
     "december"
   ];

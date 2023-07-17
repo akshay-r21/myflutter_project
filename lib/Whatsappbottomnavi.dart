@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:myflutter_project/Home.dart';
+/*
 import 'package:myflutter_project/Whatsappcall.dart';
 import 'package:myflutter_project/Whatsappstatus.dart';
 import 'package:myflutter_project/whatsappmain.dart';
+*/
 
 void main() {
   runApp(MaterialApp(
@@ -18,7 +20,7 @@ class WNavigationbar extends StatefulWidget {
 class _WNavigationbarState extends State<WNavigationbar> {
   int index = 0;
 
-  var screens = [Whatsapp(), HomePage(), Whatsappcall(), Whatsappstatus()];
+ // var screens = [Whatsapp(), HomePage(), Whatsappcall(), Whatsappstatus()];
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +59,7 @@ class _WNavigationbarState extends State<WNavigationbar> {
                 label: "Calla",
                 backgroundColor: Colors.white),
           ]),
-      body: screens[index],
+     // body: screens[index],
     );
   }
 }

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:myflutter_project/Home.dart';
+/*
 import 'package:myflutter_project/Whatsappcall.dart';
 import 'package:myflutter_project/Whatsappstatus.dart';
 import 'package:myflutter_project/whatsappmain.dart';
+*/
 void main(){
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -40,9 +42,9 @@ class tab extends StatelessWidget{
       ]),),
       body: TabBarView(children: [
         HomePage(),
-        Whatsapp(),
+      /*  Whatsapp(),
         Whatsappstatus(),
-        Whatsappcall()
+        Whatsappcall()*/
       ]),
     ),
   );
