@@ -16,7 +16,7 @@ class _playlistState extends State<playlist> {
   int index = 0;
 
   var images = [
-    "Assets/Images/top.png",
+    "Assets/Images/music3.png",
     "Assets/Images/music4.jpg",
     "Assets/Images/music.jpg",
     "Assets/Images/music2.jpg",
@@ -65,13 +65,17 @@ class _playlistState extends State<playlist> {
               icon: Icon(Icons.home),
               label: 'Home',
               backgroundColor: Colors.black),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search',
+          BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: 'Search',
               backgroundColor: Colors.black),
           BottomNavigationBarItem(
-              icon: Icon(Icons.play_arrow), label: 'play list',
+              icon: Icon(Icons.play_arrow),
+              label: 'play list',
               backgroundColor: Colors.black),
           BottomNavigationBarItem(
-              icon: Icon(Icons.more_vert_sharp), label: 'more',
+              icon: Icon(Icons.more_vert_sharp),
+              label: 'more',
               backgroundColor: Colors.black),
         ],
         onTap: (tapindex) {
@@ -91,9 +95,10 @@ class _playlistState extends State<playlist> {
         children: List.generate(
             6,
             (index) => Container(
-                    child: Column(
-                  children: [Image.asset(images[index])],
-                ))),
+                  child: Column(
+                    children: [Image.asset(images[index])],
+                  ),
+                )),
       ),
     );
   }
