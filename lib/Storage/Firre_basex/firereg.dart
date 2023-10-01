@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:myflutter_project/Storage/Firre_basex/firebasehelper.dart';
+import 'package:myflutter_project/storage/firre_basex/firelogin.dart';
+import 'firebasehelper.dart';
+class FireRegistration extends StatefulWidget {
+  const FireRegistration({super.key});
 
-void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: Fire_reg(),
-  ));
-}
-
-class Fire_reg extends StatefulWidget {
   @override
-  State<Fire_reg> createState() => _Fire_regState();
+  State<FireRegistration> createState() => _FireRegistrationState();
 }
 
-class _Fire_regState extends State<Fire_reg> {
+class _FireRegistrationState extends State<FireRegistration> {
   final remail = TextEditingController();
   final rpass = TextEditingController();
 
@@ -21,63 +16,42 @@ class _Fire_regState extends State<Fire_reg> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Firebase reg"),
+        title: const Text('Firebase Registration Page'),
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Center(
-                  child: Text(
-                "Login",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-              )),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextField(
-                  controller: remail,
-                  decoration: InputDecoration(
-                      hintText: "Email",
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20))),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextField(
-                    controller: rpass,
-                    decoration: InputDecoration(
-                        hintText: "Password",
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)))),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                    onPressed: () {
-                      String username = remail.text.trim();
-                      String password = rpass.text.trim();
-                    //  Firebasehelper.signUp(email : username, pwd : password){
-                      /*  if(message == null){
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          children: [
+            TextField(
+              controller: remail,
+              decoration: const InputDecoration(
+                  border: OutlineInputBorder(), hintText: 'Email'),
+            ),
+            const SizedBox(height: 20,),
+            TextField(
+              controller: rpass,
+              decoration: const InputDecoration(
+                  border: OutlineInputBorder(), hintText: 'Password'),
+            ),
+            const SizedBox(height: 20,),
+            ElevatedButton(onPressed: () {
+              String username = remail.text.trim();
+              String password = rpass.text.trim();
+              FirebaseHelper().signUp(email: username, pwd: password).then((message) {
+                if (message == null) {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => LoginFire()));
+                }else{
+                  ScaffoldMessenger.of(context).
+                  showSnackBar(SnackBar(content: Text(message)));
+                }
+              });
+            }, child: const Text("Register Here")),
+            const SizedBox(height: 10,),
 
-                        }
-                      }
-                    },*/},
-                    child: Text("Register")),
-              ),
-            ],
-          ),
+          ],
         ),
       ),
     );
   }
 }
-

@@ -1,19 +1,25 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:myflutter_project/Storage/Firre_basex/Firehome.dart';
+import 'package:myflutter_project/storage/firre_basex/firereg.dart';
+
+//import ' Firehome.dart';
+import 'firebasehelper.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MaterialApp(
-    home: Login_frie(),
+    home: LoginFire(),
   ));
 }
 
-class Login_frie extends StatefulWidget {
+class LoginFire extends StatefulWidget {
   @override
-  State<Login_frie> createState() => _Login_frieState();
+  State<LoginFire> createState() => _LoginFireState();
 }
 
-class _Login_frieState extends State<Login_frie> {
+class _LoginFireState extends State<LoginFire> {
   final email = TextEditingController();
   final pass = TextEditingController();
 
@@ -21,58 +27,54 @@ class _Login_frieState extends State<Login_frie> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Firebase Login"),
+        title: Text('Firebase Login Page'),
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Center(
-                  child: Text(
-                "Login",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-              )),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextField(
-                  controller: email,
-                  decoration: InputDecoration(
-                      hintText: "Email",
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20))),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextField(
-                    controller: pass,
-                    decoration: InputDecoration(
-                        hintText: "Password",
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)))),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(onPressed: () {}, child: Text("Login")),
-              ),
-              TextButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Login_frie() ));
-                  },
-                  child: const Text(
-                    "Not a user ? Register now",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ))
-            ],
-          ),
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          children: [
+            TextField(
+              controller: email,
+              decoration: const InputDecoration(
+                  border: OutlineInputBorder(), hintText: 'Email'),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            TextField(
+              controller: pass,
+              decoration: const InputDecoration(
+                  border: OutlineInputBorder(), hintText: 'Password'),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  String username = email.text.trim();
+                  String password = pass.text.trim();
+
+                  FireHelper().signIn(email:username,pass:password).then((value) {
+                    if(value == null){
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context)=>HomeFire()));
+                    }else{
+                      ScaffoldMessenger.of(context).
+                      showSnackBar(SnackBar(content: Text(value)));
+                    }
+                  });
+                },
+                child: const Text("Login Here")),
+            const SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => FireRegistration()));
+                },
+                child: const Text("Register Here")),
+          ],
         ),
       ),
     );
